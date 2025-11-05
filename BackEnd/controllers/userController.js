@@ -56,7 +56,7 @@ const registerUser=async (req,res)=>{
         
         res.status(200).json({message:'otp sent to your email'})
     } catch (error) {
-        console.error('OTP verification error', error)
+        console.error('Login Error', error)
         res.status(500).json({message:'server error'})
     }
 }
