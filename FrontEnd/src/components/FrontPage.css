@@ -1,0 +1,142 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.total-con{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+header,footer{
+    width: 100%;
+    height: 8vh;
+    /* background-color: rgb(173, 253, 177); */
+    background-color: rgb(171, 255, 183);
+    z-index: 2;
+}
+
+main{
+    width: 100%;
+    /* height: 84vh; */
+    flex: 1;
+    background-color: rgb(239, 255, 239);
+    position: relative;
+}
+header .top-header-con{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.top-header-con button{
+    position: absolute;
+    right:  3%;
+    background-color:transparent;
+    border:none;
+    border-radius: 20px;
+}
+.menu-bar{
+    padding: 0;
+    font-size: 30px;
+    color: purple;
+    /* color: rgb(107, 78, 240); */
+
+}
+.menu{
+    width: 25%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    /* background-color: rgb(255, 221, 194); */
+    background-color: rgb(171, 255, 183);
+
+    padding: 1.5rem  1rem;
+}
+.exit-btn{
+    width: 100%;
+    height: 10%;
+}
+.exit-btn div{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+.drop-down{
+    width: 30%;
+    font-size: 2rem;
+}
+.menu-list{
+    display: block;
+    margin: 8px 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.menu button {
+    display: block;
+    margin: 1.5rem 0rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    border-top: #333;
+  }
+  
+.menu a ,.exit-btn div {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+  }
+  .confirm-con {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  .dialog-box {
+    background: white;
+    padding: 20px 30px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+  
+  .dialog-actions {
+    margin-top: 20px;
+  }
+  .dialog-actions button {
+    margin: 0 10px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .dialog-actions button:first-child {
+    background-color: #dc2626; /* Red */
+    color: white;
+  }
+  
+  .dialog-actions button:last-child {
+    background-color: #e5e7eb; /* Gray */
+  }
+@media (min-width:601px){
+    main .form-style{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
