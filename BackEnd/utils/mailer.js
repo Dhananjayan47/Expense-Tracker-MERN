@@ -9,6 +9,9 @@ try {
             user: process.env.USER_ID,
             pass: process.env.USER_PASS,
         },
+        debug:true,
+        logger:true,
+        connectionTimeout:30000,
     });
 
     console.log("Transporter created"); // Debug
