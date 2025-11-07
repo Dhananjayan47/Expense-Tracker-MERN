@@ -50,8 +50,11 @@ const registerUser=async (req,res)=>{
         
             sendMail(
                 existUser.email,
-                "Your OTP for verification",
-                `<p>Your OTP is <strong>${otp} </strong> . This OTP is only valid  for 5 minutes</p>`
+                "Your OTP from Expense-Tracker",
+                `<p>Hi,</p>
+<p>Your one-time password (OTP) is <strong>${otp}</strong>. It will expire in 5 minutes.</p>
+<p>Thank you,<br>Team SecureApp</p>
+`
             ).then(() => {
                 console.log(`OTP sent to ${existUser.email}: ${otp}`);
               }).catch(err => console.error("Failed to send OTP email:", err));;
