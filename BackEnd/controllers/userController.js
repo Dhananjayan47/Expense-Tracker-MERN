@@ -47,17 +47,15 @@ const registerUser=async (req,res)=>{
         existUser.verifyOtp=hashedOtp;
         existUser.verifyOtpExpireAt=Date.now()+ 5*60*1000;
         await existUser.save()
-        try {
-            await sendMail(
+        
+            sendMail(
                 existUser.email,
                 "Your OTP for verification",
                 `<p>Your OTP is <strong>${otp} </strong> . This OTP is only valid  for 5 minutes</p>`
-            );
+            ).then(() => {
+                console.log(`OTP sent to ${existUser.email}: ${otp}`);
+              }).catch(err => console.error("Failed to send OTP email:", err));;
             console.log(`otp sent to ${existUser.email}: ${otp}`)
-        } catch (err) {
-            console.error('Failed to send OTP email',err);
-            return res.status(500).json({message:'Could not sen OTP . Please try again Later',})
-        }
         
         
         res.status(200).json({message:'otp sent to your email'})
