@@ -1,265 +1,219 @@
-/* ==== GLOBAL COLORS & BASE ==== */
-:root {
-    --primary: rgb(81, 78, 245);
-    --accent: rgb(46, 126, 52);
-    --bg-light: rgb(239, 255, 239);
-    --text-dark: #222;
-    --border-light: #ccc;
-    --radius: 8px;
-    --transition: all 0.2s ease-in-out;
-  }
-  
-  #screen {
+#screen{
     color: white;
-    background-color: var(--primary);
-    border-radius: var(--radius);
-    padding: 0.2rem 0.5rem;
-  }
-  
-  #notes {
-    border: var(--accent) solid 2px;
-    border-radius: var(--radius);
-    padding: 0.5rem;
-    font-family: inherit;
-    font-size: 0.9rem;
-    background-color: #fff;
-  }
-  
-  /* ==== MAIN FORM ==== */
-  .form-style > form {
-    min-width: 320px;
+    background-color: rgb(81, 78, 245) ;
+
+}
+#notes{
+    border: rgb(46, 126, 52) solid 2px;
+}
+.form-style>form{
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: center;
     height: 100vh;
+    flex-shrink: 0;
+    flex-grow: 1;
+    min-width: 320px;
+    /* min-height: 100vh; */
     position: relative;
-    background-color: var(--bg-light);
-    border-radius: var(--radius);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    padding: 0.5rem 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  
-  /* ==== DECISION BUTTONS ==== */
-  .decision-container {
+    background-color: rgb(239, 255, 239);
+
+}
+.decision-container{
     width: 100%;
+    height: 5%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    column-gap: 60%;
     padding: 0.5rem 0;
-  }
-  
-  .decision-container input {
-    font-size: 12px;
-    border: 2px solid var(--primary);
-    border-radius: var(--radius);
-    background-color: white;
-    color: var(--primary);
-    padding: 0.4rem 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: var(--transition);
-  }
-  
-  .decision-container input:hover {
-    background-color: var(--primary);
-    color: white;
-  }
-  
-  /* ==== TYPE TOGGLE (INCOME / EXPENSE) ==== */
-  .add-top-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    height: 10%;
-  }
-  
-  .add-top-container input {
-    cursor: pointer;
-    background-color: transparent;
+}
+.decision-container input{
+    font-size: 10px;
     border: none;
-    font-weight: 700;
-    color: #444;
-    transition: var(--transition);
-  }
-  
-  .add-top-container span {
-    font-size: 24px;
-    color: var(--primary);
-  }
-  
-  .add-top-container input:hover {
-    color: var(--primary);
-    text-decoration: underline;
-  }
-  
-  .typeOfTransition-select {
-    color: var(--primary);
-    text-decoration: underline;
-  }
-  
-  /* ==== FORM TOP SECTION ==== */
-  .form-top-container {
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.add-top-container > div >label{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    /* background-color: aqua; */
+}
+.add-top-container input{
+    cursor: pointer;
+    /* width: 48%; */
+    /* height: inherit; */
+    margin: 0.5rem 0;
+    padding: 0.5rem 0;
+    background-color: transparent;
+    border:none;
+    /* width: 48vw; */
+    margin: 0.5rem 0;
+    padding: 0.5rem 0;
+    background-color: transparent;
+    border:none;
+}
+.add-top-container input:hover{
+    
+}
+.add-top-container span{
+    font-size: 25px;
+}
+.form-top-container{
     width: 100%;
     display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-  }
-  
-  .form-top-container div {
+    height: 10%;
+    justify-content: space-around;
+    text-align: center;
+}
+.form-top-container div{
     width: 45%;
-  }
-  
-  .form-top-container label {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--text-dark);
-    text-transform: capitalize;
-  }
-  
-  .form-top-container select {
+}
+.form-top-container select{
     cursor: pointer;
     width: 100%;
-    margin-top: 0.3rem;
-    padding: 0.5rem;
-    border: 2px solid var(--accent);
-    border-radius: var(--radius);
+    margin: 0.3rem 0 ;
+    padding: 0.5rem;    background-color: transparent;
+    /* border: rgb(207, 0, 180) solid 1px; */
+    border: rgb(46, 126, 52) solid 2px;
     background-color: white;
+    /* border: rgb(207, 0, 180) solid 1px; */
     font-size: 13px;
-    font-weight: 600;
-    transition: var(--transition);
-  }
-  
-  .form-top-container select:hover {
-    border-color: var(--primary);
-  }
-  
-  /* ==== DESCRIPTION SECTION ==== */
-  .form-mid-container {
+    font-weight: 700;
+}
+.form-mid-container{
     padding: 0.7rem 0.5rem;
     font-size: 12px;
-  }
-  
-  .form-mid-container label {
-    display: block;
-    margin-bottom: 0.3rem;
-    font-weight: 600;
-  }
-  
-  /* ==== CALCULATOR SECTION ==== */
-  .form-bottom-container {
+    height: 20%;
+}
+.form-mid-container label{
+    /* margin: 1.5rem 0rem; */
+    height: 20%;
+    width: 100%;
+}
+.form-mid-container textarea{
+    width: 100%;
+    height: 80%;
+}
+.form-bottom-container{
     display: flex;
     flex-direction: column;
     padding: 0.5rem;
     height: 50%;
-  }
-  
-  .calculator-screen {
+    /* width: 100%; */
+}
+.calculator-screen{
     width: 100%;
     height: 20%;
-    border: var(--accent) solid 2px;
-    border-radius: var(--radius);
+    border: rgb(46, 126, 52) solid 2px;
+    text-align: end;
+    column-gap: 5px;
+    display: flex;
     background-color: white;
+}
+.calculator-screen .screen-btn{
+    width: 30%;
     display: flex;
-    align-items: center;
-    padding: 0.3rem;
-    gap: 0.5rem;
-  }
-  
-  .calculator-screen > input {
-    flex: 1;
-    font-size: 1.6rem;
-    text-align: right;
-    border: none;
-    outline: none;
+}
+.calculator-screen input{
+    width: 50%;
+    padding: 0.1rem;
+    margin: 0.2rem;
+    /* font-size: 45px; */
+    text-align: center;
     background-color: transparent;
-    color: var(--text-dark);
-  }
-  
-  .calculator-screen .screen-btn {
-    display: flex;
-    gap: 0.3rem;
-  }
-  
-  .calculator-screen .screen-btn input {
-    border: 1.5px solid var(--border-light);
-    background-color: #fafafa;
-    border-radius: var(--radius);
-    padding: 0.4rem 0.7rem;
-    cursor: pointer;
-    transition: var(--transition);
-    font-weight: 600;
-  }
-  
-  .calculator-screen .screen-btn input:hover {
-    background-color: var(--primary);
-    color: white;
-  }
-  
-  /* ==== CALCULATOR BUTTONS ==== */
-  .calculator-button {
+    border: black solid 1.5px;
+    border-radius: 5px;
+}
+.calculator-screen>input{
+    width: 70%;
+    /* font-size: 45px; */
+    font-size: 5vw; /* responsive font */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: right;
+    border: none;
+}
+.calculator-button{
     width: 100%;
-    height: 80%;
+    height:80%;
     display: flex;
-    justify-content: center;
-  }
-  
-  .button-container {
+    /* flex-direction: column; */
+}
+.calculator-button input{
+    cursor: pointer;
+    background-color: transparent;
+    border: black solid 1px;
+    border-radius: 15px;
+}
+.button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+  padding: 0.5rem 0rem;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.row input[type="button"] {
+  width: 60px;
+  height: 60px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* .button-container{
+    width: 80%;
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    width: 100%;
-    padding: 0.5rem 0;
-  }
-  
-  .row {
+    justify-content: space-around;
+}
+.button-container .row{
     display: flex;
-    justify-content: space-between;
-    gap: 8px;
-  }
-  
-  .row input[type="button"] {
-    flex: 1;
-    height: 60px;
-    font-size: 20px;
-    background-color: white;
-    border: 1.5px solid var(--border-light);
-    border-radius: var(--radius);
-    cursor: pointer;
-    transition: var(--transition);
-  }
-  
-  .row input[type="button"]:hover {
-    background-color: var(--primary);
-    color: white;
-    border-color: var(--primary);
-    transform: scale(1.05);
-  }
-  
-  /* ==== RESPONSIVE ==== */
-  @media (max-width: 600px) {
-    .form-style {
-      min-width: 321px;
-      max-width: 600px;
-      position: relative;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.btn-con{
+    width: 20%;
+    display: flex;
+    justify-content: left;
+}
+.btn-con .btn-row{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+} */
+/* #typeOfTransition:hover{
+    color: rgb(61, 47, 255);
+} */
+.typeOfTransition-select{
+    color: rgb(81, 78, 245);
+
+    text-decoration: underline;
+}
+@media(max-width:600px){
+    .form-style{
+        min-width: 321px;
+        max-width: 600px;
+        max-height: 100vh;
+        position: relative;
     }
-    .form-top-container {
-      flex-direction: column;
-      align-items: center;
+}
+@media(min-width:601px){
+    .form-style{
+        min-width: 600px;
+        max-width: 1440px;
+        max-height: 100vh;
+        position: relative;
     }
-    .form-top-container div {
-      width: 100%;
-    }
-    .row input[type="button"] {
-      font-size: 18px;
-      height: 55px;
-    }
-  }
-  
-  @media (min-width: 601px) {
-    .form-style {
-      min-width: 600px;
-      max-width: 1440px;
-      position: relative;
-    }
-  }
-  
+}
