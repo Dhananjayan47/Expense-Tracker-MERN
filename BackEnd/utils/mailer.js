@@ -17,7 +17,7 @@ try {
         html,
     };
     const info =await transport.sendMail(mailOptions);
-    console.log('email sent :',info.messageId)
+    console.log('email sent :',info);
 } catch (error) {
     console.error('error sending message :',error)
 }};
