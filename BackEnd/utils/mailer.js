@@ -41,9 +41,10 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 const sendMail = async (to, subject, html) => {
   try {
+    const senderEmail=process.env.SENDGRID_SENDER;
     const msg = {
       to,
-      from: process.env.SENDGRID_SENDER,
+      from:` EXPENSE TRACKER <${senderEmail}>`,
       subject,
       html,
     };
