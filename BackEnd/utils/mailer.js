@@ -1,5 +1,6 @@
 const nodemailer = require("nodemailer");
 const sendMail = async (to, subject, html) => {
+    console.log("Starting sendMail function..."); 
 try {
     
     const transport = nodemailer.createTransport({
@@ -10,16 +11,24 @@ try {
         },
     });
 
+    console.log("Transporter created"); // Debug
+
     const mailOptions = {
         from:`"EXPENSE TRACKER" <${process.env.USER_ID}>`,
         to,
         subject,
         html,
     };
+    console.log("Sending email to:", to); // Debug
+
     const info =await transport.sendMail(mailOptions);
+
+    console.log("Email sent successfully!");
     console.log('email sent :',info);
+    return info
 } catch (error) {
-    console.error('error sending message :',error)
+    console.error('error sending message :',error);
+    throw error
 }};
 
 module.exports = sendMail;
