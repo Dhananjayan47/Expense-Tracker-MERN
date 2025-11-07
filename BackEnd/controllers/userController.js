@@ -102,8 +102,8 @@ const verifyOtp=async (req,res)=>{
         
         res.cookie('jwt',token,{
             httpOnly:true,
-            secure:process.env.NODE_ENV =='production',
-            sameSite:'strict',
+            secure:process.env.NODE_ENV ==='production',
+            sameSite:'None',
                     maxAge:24*60*60*1000,
                 });
                 res.status(200).json({message:'OTP verified . logged in.'})
