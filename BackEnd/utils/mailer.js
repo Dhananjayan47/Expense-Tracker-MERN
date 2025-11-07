@@ -37,13 +37,13 @@
 // module.exports = sendMail;
 
 const sgMail = require('@sendgrid/mail');
-sgMail.setApiKey(process.env.USER_PASS);
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 const sendMail = async (to, subject, html) => {
   try {
     const msg = {
       to,
-      from: process.env.USER_ID,
+      from: process.env.SENDGRID_SENDER,
       subject,
       html,
     };
