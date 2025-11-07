@@ -44,15 +44,21 @@ const registerUser=async (req,res)=>{
         
         const otp = String(Math.floor(100000+Math.random()*900000));
         const hashedOtp= await bcrypt.hash(otp,10)
-        await sendMail(
-            existUser.email,
-            "Your OTP for verification",
-            `<p>Your OTP is <strong>${otp} </strong> . This OTP is only valid  for 5 minutes</p>`
-        );
-        
         existUser.verifyOtp=hashedOtp;
         existUser.verifyOtpExpireAt=Date.now()+ 5*60*1000;
         await existUser.save()
+        try {
+            await sendMail(
+                existUser.email,
+                "Your OTP for verification",
+                `<p>Your OTP is <strong>${otp} </strong> . This OTP is only valid  for 5 minutes</p>`
+            );
+            console.log(`otp sent to ${existUser.email}: ${otp}`)
+        } catch (err) {
+            console.error('Failed to send OTP email',err);
+            return res.status(500).json({message:'Could not sen OTP . Please try again Later',})
+        }
+        
         
         res.status(200).json({message:'otp sent to your email'})
     } catch (error) {
