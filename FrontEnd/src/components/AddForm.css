@@ -6,19 +6,23 @@
 #notes{
     border: rgb(46, 126, 52) solid 2px;
 }
-.form-style>form{
-    display: flex;
-    flex-direction: column;
-    
-    justify-content: center;
-    height: 100vh;
-    flex-shrink: 0;
-    flex-grow: 1;
+.form-style{
     min-width: 320px;
     /* min-height: 100vh; */
+    height: 100vh;
     position: relative;
+    /* background-color: red; */
+    
     background-color: rgb(239, 255, 239);
-
+    /* flex-grow: 0; */
+    /* flex-shrink: 1; */
+}
+.form-style>form{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 .decision-container{
     width: 100%;
@@ -35,17 +39,17 @@
     cursor: pointer;
 }
 
-.add-top-container > div >label{
+.add-top-container{
     width: 100%;
     height: 10%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
     /* background-color: aqua; */
 }
 .add-top-container input{
     cursor: pointer;
-    /* width: 48%; */
+    width: 48%;
     /* height: inherit; */
     margin: 0.5rem 0;
     padding: 0.5rem 0;
@@ -56,9 +60,6 @@
     padding: 0.5rem 0;
     background-color: transparent;
     border:none;
-}
-.add-top-container input:hover{
-    
 }
 .add-top-container span{
     font-size: 25px;
@@ -104,6 +105,8 @@
     flex-direction: column;
     padding: 0.5rem;
     height: 50%;
+    flex-grow: 0;
+    flex-shrink: 1;
     /* width: 100%; */
 }
 .calculator-screen{
@@ -145,29 +148,31 @@
     display: flex;
     /* flex-direction: column; */
 }
-.calculator-button input{
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+    height: 100%;
+    padding: 0.5rem 0rem;
+}
+.button-container input{
     cursor: pointer;
     background-color: transparent;
     border: black solid 1px;
     border-radius: 15px;
-}
-.button-container {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  width: 100%;
-  padding: 0.5rem 0rem;
 }
 
 .row {
   display: flex;
   justify-content: space-between;
   gap: 5px;
+  height: 30%;
 }
 
 .row input[type="button"] {
-  width: 60px;
-  height: 60px;
+  width: 65px;
+  height: 65px;
   font-size: 24px;
   cursor: pointer;
 }
@@ -204,9 +209,14 @@
 @media(max-width:600px){
     .form-style{
         min-width: 321px;
+        width: 412px;
         max-width: 600px;
         max-height: 100vh;
         position: relative;
+    }
+    .form-style>form{
+        width: 100%;
+        height: 100%;
     }
 }
 @media(min-width:601px){
