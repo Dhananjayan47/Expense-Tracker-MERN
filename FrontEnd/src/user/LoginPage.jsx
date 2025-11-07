@@ -30,6 +30,7 @@ const LoginPage = () => {
 
         if(userDetails.email==''||userDetails.password==''){
             notification.current='Please fill all Fields';
+            setIsPopUp(true);
             return;
         }
 
@@ -43,6 +44,7 @@ const LoginPage = () => {
             console.error("error :", err.response?.data||err.message);
             notification.current=err.response?.data.message;
             setIsPopUp(true);
+            setIsSubmitted(false); 
         }
     };
 
@@ -68,7 +70,7 @@ const LoginPage = () => {
                             type="password"
                             name="password"
                             id="pass"
-                            value={userDetails.value}
+                            value={userDetails.password}
                             onChange={handleChange}
                         />
                     </div>
